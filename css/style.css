@@ -1,0 +1,70 @@
+label {
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding-right: 30px;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 4px 10px;
+}
+
+#hidden_div_Impuestos {
+  display: none;
+}
+
+#hidden_div_Contabilidad {
+  display: none;
+}
+
+#hidden_div_Sociedades {
+  display: none;
+}
+
+#hidden_div_Cotizacion {
+  display: none;
+}
+
+#hidden_div_Historial {
+  display: none;
+}
+
+#hidden_div_HistorialVaciado {
+  display: none;
+}
+
+#hidden_div_NoHayHistorial {
+  display: none;
+}
+
+#btnHistorial {
+  display: none;
+}
+
+#btnBorrarHistorial {
+  display: none;
+}
+
+#btnCotizarImpuestos {
+  display: none;
+}
+
+#btnCotizarContabilidad {
+  display: none;
+}
+
+#btnCotizarSociedades {
+  display: none;
+}
+
+#SRL-Urgente {
+  display: none;
+}
+
+#SA-Urgente {
+  display: none;
+}
+
+#SAS-Urgente {
+  display: none;
+}
