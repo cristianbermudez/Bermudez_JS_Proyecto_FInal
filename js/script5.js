@@ -331,7 +331,7 @@ btnCotizarSociedades.addEventListener("click", () => {
     ? cotizacionSCD.push(3000)
     : inputCantidadSocios.value == 3
     ? cotizacionSCD.push(5000)
-    : inputCantidadSocios.value > 4 && inputCantidadSocios.value < 6
+    : inputCantidadSocios.value >= 4 && inputCantidadSocios.value < 6
     ? cotizacionSCD.push(8000)
     : false;
 
