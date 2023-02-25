@@ -1,265 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
 
-    <title>Document</title>
-    <title>Bootstrap Project</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
 
-  <body>
-    <main><h1>Cotizador Contable</h1></main>
+  <title>Document</title>
+  <title>Bootstrap Project</title>
+</head>
 
-    <!-- <h2>Por favor ingrese un servicio a Cotizar:</h2> -->
+<body>
+  <main>
+    <h1>Cotizador Contable</h1>
+  </main>
 
-    <label for="servicio-select"
-      >Por favor ingrese un servicio a Cotizar:</label
-    >
+  <!-- <h2>Por favor ingrese un servicio a Cotizar:</h2> -->
 
-    <select id="servicio-select">
-      <option value="">--Seleccione un servicio--</option>
-      <option value="Impositivo">Impuestos</option>
-      <option value="Contable">Contabilidad</option>
-      <option value="Sociedades">Alta de Sociedades</option>
-    </select>
+  <label for="servicio-select">Por favor ingrese un servicio a Cotizar:</label>
+
+  <select id="servicio-select">
+    <option value="">--Seleccione un servicio--</option>
+    <option value="Impositivo">Impuestos</option>
+    <option value="Contable">Contabilidad</option>
+    <option value="Sociedades">Alta de Sociedades</option>
+  </select>
+
+  <br />
+  <br />
+
+  <div id="hidden_div_Impuestos">
+    <h3>Impuestos</h3>
+
+    <form>
+      <label> Ingrese Cantidad de comprobantes mensuales:</label>
+      <input type="number" min="1" id="inputComprobantesIMP" inputmode="numeric"
+        oninput="validity.valid||(value='');" />
+      <br />
+      <br />
+      <label> ¿Quiere cotizar IVA?:</label>
+      <select id="IVA-select">
+        <option value="">--Seleccione una opción--</option>
+        <option id="conIVA" value="SI">SI</option>
+        <option id="sinIVA" value="NO">NO</option>
+      </select>
+      <br />
+      <br />
+      <label> ¿Quiere cotizar IIBB?:</label>
+      <select id="IIBB-select">
+        <option value="">--Seleccione una opción--</option>
+        <option id="conIIBB" value="SI">SI</option>
+        <option id="sinIIBB" value="NO">NO</option>
+      </select>
+      <br />
+      <br />
+      <label> ¿Quiere cotizar Ganancias?:</label>
+      <select id="Ganancias-select">
+        <option value="">--Seleccione una opción--</option>
+        <option id="conGanancias" value="SI">SI</option>
+        <option id="sinGanancias" value="NO">NO</option>
+      </select>
+      <br />
+      <br />
+    </form>
+
+    <br />
+    <br />
+    <button class="btn btn-secondary" id="btnCotizarImpuestos">COTIZAR IMPUESTOS</button>
+    <br />
+    <br />
+  </div>
+
+
+
+
+  <div id="hidden_div_Contabilidad">
+    <h3>Contabilidad</h3>
+
+    <form>
+      <label> Ingrese Cantidad de Cuentas Bancarias:</label>
+      <input type="number" min="1" id="inputCuentasCNT" inputmode="numeric" oninput="validity.valid||(value='');" />
+      <br />
+      <br />
+      <label> ¿Quiere cotizar una SRL?:</label>
+      <select id="SRL-select">
+        <option value="">--Seleccione una opción--</option>
+        <option id="conSRL" value="SI">SI</option>
+        <option id="sinSRL" value="NO">NO</option>
+      </select>
+      <br />
+      <br />
+      <label> ¿Quiere cotizar una SA?:</label>
+      <select id="SA-select">
+        <option value="">--Seleccione una opción--</option>
+        <option id="conSA" value="SI">SI</option>
+        <option id="sinSA" value="NO">NO</option>
+      </select>
+      <br />
+      <br />
+      <label> ¿Quiere cotizar una SAU o SAS?:</label>
+      <select id="SAU-SAS-select">
+        <option value="">--Seleccione una opción--</option>
+        <option id="conSAU-SAS" value="SI">SI</option>
+        <option id="sinSAU-SAS" value="NO">NO</option>
+      </select>
+      <br />
+      <br />
+
+    </form>
+
 
     <br />
     <br />
 
-    <div id="hidden_div_Impuestos">
-      <h3>Impuestos</h3>
+    <button class="btn btn-secondary" id="btnCotizarContabilidad">COTIZAR CONTABILIDAD</button>
 
-      <form>
-        <label> Ingrese Cantidad de comprobantes mensuales:</label>
-        <input
-          type="number"
-          min="1"
-          id="inputComprobantesIMP"
-          inputmode="numeric"
-          oninput="validity.valid||(value='');"
-        />
-        <br />
-        <br />
-        <label> ¿Quiere cotizar IVA?:</label>
-        <select id="IVA-select">
+    </button>
+  </div>
+
+  <div id="hidden_div_Sociedades">
+    <h3>Alta de Sociedades</h3>
+
+    <form>
+      <label> Ingrese Cantidad de Socios de la Sociedad:</label>
+      <input type="number" min="1" max="5" id="inputCantidadSocios" inputmode="numeric"
+        oninput="validity.valid||(value='');" placeholder="Número de 1 a 5" />
+      <br />
+      <br />
+      <label> ¿Quiere cotizar un Alta de S.R.L?:</label>
+      <select id="AltaSRL-select">
+        <option value="">--Seleccione una opción--</option>
+        <option id="conAltaSRL" value="SI">SI</option>
+        <option id="sinAltaSRL" value="NO">NO</option>
+      </select>
+      <br />
+      <br />
+      <div id="SRL-Urgente">
+        <label> ¿Es URGENTE?:</label>
+        <select id="SrlURG-select">
           <option value="">--Seleccione una opción--</option>
-          <option id="conIVA" value="SI">SI</option>
-          <option id="sinIVA" value="NO">NO</option>
+          <option id="srlconUrgencia" value="SI">SI</option>
+          <option id="srlsinUrgencia" value="NO">NO</option>
         </select>
-        <br />
-        <br />
-        <label> ¿Quiere cotizar IIBB?:</label>
-        <select id="IIBB-select">
+      </div>
+      <br />
+      <br />
+      <label> ¿Quiere cotizar un Alta de S.A.?:</label>
+      <select id="AltaSA-select">
+        <option value="">--Seleccione una opción--</option>
+        <option id="conAltaSA" value="SI">SI</option>
+        <option id="sinAltaSA" value="NO">NO</option>
+      </select>
+      <br />
+      <br />
+      <div id="SA-Urgente">
+        <label> ¿Es URGENTE?:</label>
+        <select id="SAURG-select">
           <option value="">--Seleccione una opción--</option>
-          <option id="conIIBB" value="SI">SI</option>
-          <option id="sinIIBB" value="NO">NO</option>
+          <option id="SAconUrgencia" value="SI">SI</option>
+          <option id="SAsinUrgencia" value="NO">NO</option>
         </select>
-        <br />
-        <br />
-        <label> ¿Quiere cotizar Ganancias?:</label>
-        <select id="Ganancias-select">
-          <option value="">--Seleccione una opción--</option>
-          <option id="conGanancias" value="SI">SI</option>
-          <option id="sinGanancias" value="NO">NO</option>
-        </select>
-        <br />
-        <br />
-      </form>
+      </div>
 
       <br />
       <br />
-      <button class="btn btn-secondary" id="btnCotizarImpuestos">COTIZAR IMPUESTOS</button>
+      <label> ¿Quiere cotizar un Alta de S.A.S?:</label>
+      <select id="AltaSAS-select">
+        <option value="">--Seleccione una opción--</option>
+        <option id="conAltaSAS" value="SI">SI</option>
+        <option id="sinAltaSAS" value="NO">NO</option>
+      </select>
       <br />
-      <br />  
-    </div>
-
-
-
-
-    <div id="hidden_div_Contabilidad">
-      <h3>Contabilidad</h3>
-
-      <form>
-        <label> Ingrese Cantidad de Cuentas Bancarias:</label>
-        <input
-          type="number"
-          min="1"
-          id="inputCuentasCNT"
-          inputmode="numeric"
-          oninput="validity.valid||(value='');"
-        />
-        <br />
-        <br />
-        <label> ¿Quiere cotizar una SRL?:</label>
-        <select id="SRL-select">
+      <br />
+      <div id="SAS-Urgente">
+        <label> ¿Es URGENTE?:</label>
+        <select id="SAS-URG-select">
           <option value="">--Seleccione una opción--</option>
-          <option id="conSRL" value="SI">SI</option>
-          <option id="sinSRL" value="NO">NO</option>
+          <option id="SASconUrgencia" value="SI">SI</option>
+          <option id="SASsinUrgencia" value="NO">NO</option>
         </select>
-        <br />
-        <br />
-        <label> ¿Quiere cotizar una SA?:</label>
-        <select id="SA-select">
-          <option value="">--Seleccione una opción--</option>
-          <option id="conSA" value="SI">SI</option>
-          <option id="sinSA" value="NO">NO</option>
-        </select>
-        <br />
-        <br />
-        <label> ¿Quiere cotizar una SAU o SAS?:</label>
-        <select id="SAU-SAS-select">
-          <option value="">--Seleccione una opción--</option>
-          <option id="conSAU-SAS" value="SI">SI</option>
-          <option id="sinSAU-SAS" value="NO">NO</option>
-        </select>
-        <br />
-        <br />
-        
-      </form>
-
+      </div>
 
       <br />
       <br />
+    </form>
 
-      <button class="btn btn-secondary" id="btnCotizarContabilidad">COTIZAR CONTABILIDAD</button>
+    <br />
+    <br />
 
-      </button>
-    </div>
+    <button class="btn btn-secondary" id="btnCotizarSociedades">COTIZAR SOCIEDADES</button>
 
-    <div id="hidden_div_Sociedades">
-      <h3>Alta de Sociedades</h3>
-
-      <form>
-        <label> Ingrese Cantidad de Socios de la Sociedad:</label>
-        <input
-          type="number"
-          min="1"
-          max="5"
-          id="inputCantidadSocios"
-          inputmode="numeric"
-          oninput="validity.valid||(value='');"
-          placeholder="Número de 1 a 5"
-        />
-        <br />
-        <br />
-        <label> ¿Quiere cotizar un Alta de S.R.L?:</label>
-        <select id="AltaSRL-select">
-          <option value="">--Seleccione una opción--</option>
-          <option id="conAltaSRL" value="SI">SI</option>
-          <option id="sinAltaSRL" value="NO">NO</option>
-        </select>
-        <br />
-        <br />
-          <div id="SRL-Urgente">
-            <label> ¿Es URGENTE?:</label>
-            <select id="SrlURG-select">
-              <option value="">--Seleccione una opción--</option>
-              <option id="srlconUrgencia" value="SI">SI</option>
-              <option id="srlsinUrgencia" value="NO">NO</option>
-            </select>
-          </div>
-        <br />
-        <br />
-        <label> ¿Quiere cotizar un Alta de S.A.?:</label>
-        <select id="AltaSA-select">
-          <option value="">--Seleccione una opción--</option>
-          <option id="conAltaSA" value="SI">SI</option>
-          <option id="sinAltaSA" value="NO">NO</option>
-        </select>
-        <br />
-        <br />
-        <div id="SA-Urgente"> 
-          <label> ¿Es URGENTE?:</label>
-            <select id="SAURG-select">
-              <option value="">--Seleccione una opción--</option>
-              <option id="SAconUrgencia" value="SI">SI</option>
-              <option id="SAsinUrgencia" value="NO">NO</option>
-            </select>
-        </div>
-        
-        <br />
-        <br />
-        <label> ¿Quiere cotizar un Alta de S.A.S?:</label>
-        <select id="AltaSAS-select">
-          <option value="">--Seleccione una opción--</option>
-          <option id="conAltaSAS" value="SI">SI</option>
-          <option id="sinAltaSAS" value="NO">NO</option>
-        </select>
-        <br />
-        <br />
-        <div id="SAS-Urgente">
-          <label> ¿Es URGENTE?:</label>
-            <select id="SAS-URG-select">
-              <option value="">--Seleccione una opción--</option>
-              <option id="SASconUrgencia" value="SI">SI</option>
-              <option id="SASsinUrgencia" value="NO">NO</option>
-            </select>
-        </div>
-        
-        <br />
-        <br />
-      </form>
-
-      <br />
-      <br />
-
-      <button class="btn btn-secondary" id="btnCotizarSociedades">COTIZAR SOCIEDADES</button>
-      
-    </div>
+  </div>
 
   <br>
   <div>
     <br>
-    <button class="btn btn-primary" id="btnHistorial" >HISTORIAL</button>
-    <button class="btn btn-primary" id="btnBorrarHistorial" >BORRAR HISTORIAL</button>
+    <button class="btn btn-primary" id="btnHistorial">HISTORIAL</button>
+    <button class="btn btn-primary" id="btnBorrarHistorial">BORRAR HISTORIAL</button>
   </div>
 
-    <br />
-    <br />
-    <div id="hidden_div_Historial">
-        <h3>HISTORIAL</h3>
+  <br />
+  <br />
+  <div id="hidden_div_Historial">
+    <h3>HISTORIAL</h3>
 
-          <div id="hidden_div_HistorialVaciado">
-            <p>Se vació el historial</p>
-          </div>
-
-          <div id="hidden_div_NoHayHistorial">
-            <p>No hay historial</p>
-          </div>
-
-          <div>
-            <ul id="ulListado">
-
-            </ul>
-            <!-- <li id="liHistorial"></li> -->
-          </div>
-    </div>
-    
-    <div id="hidden_div_Cotizacion" style="clear: both">
-      <h3 id="cotizacionTitulo" style="float: left">SU COTIZACIÓN TOTAL ES: </h3>
-      <h3 id="totalCotizacion" style="float: inline-start"></h3>
+    <div id="hidden_div_HistorialVaciado">
+      <p>Se vació el historial</p>
     </div>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="./js/script5.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <div id="hidden_div_NoHayHistorial">
+      <p>No hay historial</p>
+    </div>
+
+    <div>
+      <ul id="ulListado">
+
+      </ul>
+      <!-- <li id="liHistorial"></li> -->
+    </div>
+  </div>
+
+  <div id="hidden_div_Cotizacion" style="clear: both">
+    <!-- <h3 id="cotizacionTitulo" style="float: left">SU COTIZACIÓN TOTAL ES: </h3> -->
+    <h3 id="totalCotizacion" style="float: inline-start"></h3>
+  </div>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="./js/script5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
